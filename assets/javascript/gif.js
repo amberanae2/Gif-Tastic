@@ -15,7 +15,7 @@
     var sports = [ football,soccer,tennis,golf,volleyball]
 
     var gif=$(this).attr("data-sport");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sports + "&api_key=vY7wHjgpcMzNC9b95tNi1G5V1T6jCuPh=10=pg";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sports + "&api_key=dc6zaTOxFJmzC&limit=10"
     
 
 
@@ -27,6 +27,7 @@
      .then(function(response) {
 
       var results = response.data;
+      console.log(results);
 
       for (var i = 0; i < results.length; i++) {
 
