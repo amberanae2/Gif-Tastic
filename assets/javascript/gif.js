@@ -13,6 +13,7 @@
   
 $("button").on("click", function() {
 
+  var movies = ["football,soccer,tennis,golf,volleyball"];
  
   var sport = $(this).attr("data-sport");
 
@@ -24,8 +25,10 @@ $("button").on("click", function() {
     url: queryURL,
     method: "GET"
   })
-   
+ 
+ 
     .done(function(response) {
+    
 
     
       var results = response.data;
@@ -68,19 +71,27 @@ $("button").on("click", function() {
   })
   
   
-         $("#gifs-appear-here").on("click",".sportImg", function() {
+   $("#gifs-appear-here").on("click",".sportImg", function() {
         var state = $(this).attr('data-state');
         if ( state == 'still'){
             $(this).attr('src', $(this).data('animate'));
             $(this).attr('data-state', 'animate');
-        }  
+    }  
                else {
                   $(this).attr('src', $(this).data('still'));
                   $(this).attr('data-state', 'still');
-              };
+    };
+  });
+  function renderButtons() {
+  }
+
+  $("#add-sport").on("click", function(event) {
+    event.preventDefault();
+   
+    renderButtons();
   });
 
-  
+ 
        
   
   
